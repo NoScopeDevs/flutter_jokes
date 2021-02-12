@@ -1,0 +1,31 @@
+name: jokes
+description: Dart package to manage jokes data and domain layers.
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.9.0 <3.0.0"
+
+dependencies:
+  errors:
+    git:
+      url: git://github.com/NoScopeDevs/errors
+  network_manager:
+    git:
+      url: git://github.com/NoScopeDevs/network_manager
+
+  dartz: ^0.9.2
+  dio: ^3.0.10
+  equatable: ^1.2.6
+  meta:
+  path:
+
+dev_dependencies:
+  build_runner:
+  json_serializable: ^3.5.1
+
+  # testing
+  mockito:
+  test:
+
+  # static analysis
+  very_good_analysis:
