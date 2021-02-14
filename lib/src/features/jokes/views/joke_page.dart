@@ -10,6 +10,10 @@ import '../logic/jokes_state.dart';
 import 'joke_page.i18n.dart';
 import 'widgets.dart';
 
+///Keys for testing
+final getJokeButtonKey = UniqueKey();
+final loadingIndicatorKey = UniqueKey();
+
 class JokePage extends StatelessWidget {
   /// Static method to return the widget as a PageRoute
   static Route go() => MaterialPageRoute<void>(builder: (_) => JokePage());
@@ -25,6 +29,7 @@ class JokePage extends StatelessWidget {
             const SizedBox(height: 5),
             const JokeConsumer(),
             CupertinoButton.filled(
+              key: getJokeButtonKey,
               child: Text(kGiveMeAJoke.i18n),
               onPressed: () {
                 context.read(jokesNotifierProvider).getJoke();
@@ -49,7 +54,7 @@ class JokeConsumer extends ConsumerWidget {
     if (state is Initial) {
       return _Message(kTellJokeMessage.i18n);
     } else if (state is Loading) {
-      return LoadingWidget();
+      return LoadingWidget(key: loadingIndicatorKey);
     } else if (state is JokeAvailable) {
       return JokeCard(joke: state.joke);
     } else if (state is Error) {

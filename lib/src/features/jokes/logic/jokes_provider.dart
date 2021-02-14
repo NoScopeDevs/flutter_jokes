@@ -16,7 +16,7 @@ final jokesNotifierProvider = StateNotifierProvider(
 );
 
 /// Repositories Providers
-final _repositoryProvider = Provider<IJokesRepository>(
+final repositoryProvider = Provider<IJokesRepository>(
   (ref) {
     final apiUrl = EnvironmentConfig.apiUrl;
 
@@ -33,7 +33,7 @@ final _repositoryProvider = Provider<IJokesRepository>(
 /// Use Cases Providers
 final _getJokeProvider = Provider<GetJoke>(
   (ref) {
-    final repository = ref.watch(_repositoryProvider);
+    final repository = ref.watch(repositoryProvider);
     return GetJoke(repository: repository);
   },
 );
