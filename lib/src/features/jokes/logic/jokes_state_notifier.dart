@@ -13,7 +13,7 @@ class JokesNotifier extends StateNotifier<JokesState> {
 
   void reset() => state = Initial();
 
-  void getJoke() async {
+  Future<void> getJoke() async {
     state = Loading();
 
     final result = await _getJoke();
