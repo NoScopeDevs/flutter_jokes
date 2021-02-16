@@ -48,7 +48,16 @@ class JokeModel implements Joke {
   final String type;
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [
+        category,
+        delivery,
+        flags,
+        id,
+        lang,
+        safe,
+        setup,
+        type,
+      ];
 
   @override
   bool get stringify => true;

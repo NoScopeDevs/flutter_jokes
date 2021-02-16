@@ -39,7 +39,14 @@ class FlagsModel implements Flags {
   final bool sexist;
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [
+        explicit,
+        nsfw,
+        political,
+        racist,
+        religious,
+        sexist,
+      ];
 
   @override
   bool get stringify => true;
