@@ -1,4 +1,3 @@
-import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
@@ -8,6 +7,7 @@ import 'package:errors/errors.dart';
 import 'package:jokes/jokes.dart';
 
 import 'package:flutter_jokes/src/app.dart';
+import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart';
 import 'package:flutter_jokes/src/features/jokes/views/joke_page.dart';
 import 'package:flutter_jokes/src/features/jokes/views/joke_page.i18n.dart';
 
@@ -16,12 +16,15 @@ class MockRepository extends Mock implements IJokesRepository {}
 void main() {
   final getJokeButton = find.byKey(getJokeButtonKey);
 
-  testWidgets('Render default get joke message', (tester) async {
-    // Setup
-    await tester.pumpWidget(ProviderScope(child: JokesApp()));
-    // Expect
-    expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
-  });
+  testWidgets(
+    'Render default get joke message',
+    (tester) async {
+      // Setup
+      await tester.pumpWidget(ProviderScope(child: JokesApp()));
+      // Expect
+      expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
+    },
+  );
 
   testWidgets(
     'Press button to get a joke',
@@ -49,7 +52,7 @@ void main() {
         ProviderScope(
           overrides: [
             jokesRepositoryProvider.overrideWithProvider(
-              Provider((ref) => mockRepository),
+              Provider((_) => mockRepository),
             )
           ],
           child: JokesApp(),
