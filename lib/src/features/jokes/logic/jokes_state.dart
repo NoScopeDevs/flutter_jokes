@@ -6,7 +6,9 @@ part 'jokes_state.freezed.dart';
 @freezed
 abstract class JokesState with _$JokesState {
   /// Data is present state
-  const factory JokesState({@required JokeModel joke}) = JokeAvailable;
+  const factory JokesState.available({
+    @required JokeModel joke,
+  }) = JokeAvailable;
 
   /// Initial/default state
   const factory JokesState.initial() = Initial;
