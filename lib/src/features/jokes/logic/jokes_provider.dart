@@ -12,7 +12,7 @@ part 'jokes_state_notifier.dart';
 
 /// Provider to use the JokesStateNotifier
 final jokesNotifierProvider = StateNotifierProvider(
-  (ref) => JokesNotifier(ref),
+  (ref) => JokesNotifier(ref.watch(_getJokeProvider)),
 );
 
 /// Repositories Providers
