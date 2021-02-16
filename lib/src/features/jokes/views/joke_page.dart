@@ -4,19 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/widgets/app_version.dart';
-import '../logic/jokes_state.dart';
+import '../logic/jokes_provider.dart';
 
 import 'joke_page.i18n.dart';
 import 'widgets.dart';
 
-/// Keys for testing
+const contentSpacing = SizedBox(height: 50);
+
+/// * Keys for testing
 final getJokeButtonKey = UniqueKey();
 final loadingIndicatorKey = UniqueKey();
 
 class JokePage extends StatelessWidget {
-  /// Static method to return the widget as a PageRoute
-  static Route go() => MaterialPageRoute<void>(builder: (_) => JokePage());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,19 +23,17 @@ class JokePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Spacer(),
+            const Spacer(),
             const JokeConsumer(),
-            const SizedBox(height: 50),
+            contentSpacing,
             CupertinoButton.filled(
               key: getJokeButtonKey,
               child: Text(kGiveMeAJoke.i18n),
-              onPressed: () {
-                // TODO: Get joke
-              },
+              onPressed: () => context.read(jokesNotifierProvider).getJoke(),
             ),
-            Spacer(),
+            const Spacer(),
             AppVersion(),
-            const SizedBox(height: 70),
+            contentSpacing,
           ],
         ),
       ),
@@ -49,8 +46,7 @@ class JokeConsumer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    // TODO: Use provider
-    JokesState state;
+    final state = watch(jokesNotifierProvider.state);
 
     if (state is Initial) {
       return _Message(kTellJokeMessage.i18n);

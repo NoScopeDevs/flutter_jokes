@@ -1,68 +1,72 @@
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:mockito/mockito.dart';
-// import 'package:dartz/dartz.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:errors/errors.dart';
-// import 'package:jokes/jokes.dart';
+import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// import '../../../lib/src/app.dart';
-// import '../../../lib/src/features/jokes/logic/jokes_provider.dart';
-// import '../../../lib/src/features/jokes/views/joke_page.dart';
-// import '../../../lib/src/features/jokes/views/joke_page.i18n.dart';
+import 'package:errors/errors.dart';
+import 'package:jokes/jokes.dart';
 
-// class MockRepository extends Mock implements IJokesRepository {}
+import 'package:flutter_jokes/src/app.dart';
+import 'package:flutter_jokes/src/features/jokes/views/joke_page.dart';
+import 'package:flutter_jokes/src/features/jokes/views/joke_page.i18n.dart';
 
-// void main() {
-//   final getJokeButton = find.byKey(getJokeButtonKey);
+class MockRepository extends Mock implements IJokesRepository {}
 
-//   testWidgets('Render default get joke message', (tester) async {
-//     // Setup
-//     await tester.pumpWidget(ProviderScope(child: JokesApp()));
-//     //Expect
-//     expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
-//   });
+void main() {
+  final getJokeButton = find.byKey(getJokeButtonKey);
 
-//   testWidgets('Press button to get a joke', (tester) async {
-//     //Setup
-//     IJokesRepository mockRepository = MockRepository();
+  testWidgets('Render default get joke message', (tester) async {
+    // Setup
+    await tester.pumpWidget(ProviderScope(child: JokesApp()));
+    // Expect
+    expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
+  });
 
-//     final joke = JokeModel(
-//       category: 'Programing',
-//       type: 'twopart',
-//       setup: 'How do you generate a random string?',
-//       delivery: 'Put a Windows user in front of Vim and tell him to exit.',
-//       id: 10,
-//       safe: true,
-//       lang: 'en',
-//     );
+  testWidgets(
+    'Press button to get a joke',
+    (tester) async {
+      // Setup
+      IJokesRepository mockRepository = MockRepository();
 
-//     when(mockRepository.getJoke()).thenAnswer(
-//       (_) => Future.value(
-//         Right<Failure, JokeModel>(joke),
-//       ),
-//     );
+      final joke = JokeModel(
+        category: 'Programming',
+        type: 'twopart',
+        setup: 'How do you generate a random string?',
+        delivery: 'Put a Windows user in front of Vim and tell him to exit.',
+        id: 10,
+        safe: true,
+        lang: 'en',
+      );
 
-//     await tester.pumpWidget(
-//       ProviderScope(
-//         overrides: [
-//           repositoryProvider.overrideWithProvider(
-//             Provider((ref) => mockRepository),
-//           )
-//         ],
-//         child: JokesApp(),
-//       ),
-//     );
+      when(mockRepository.getJoke()).thenAnswer(
+        (_) => Future.value(
+          Right<Failure, JokeModel>(joke),
+        ),
+      );
 
-//     //Validate initial state
-//     expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
-//     expect(getJokeButton, findsWidgets);
+      await tester.pumpWidget(
+        ProviderScope(
+          overrides: [
+            jokesRepositoryProvider.overrideWithProvider(
+              Provider((ref) => mockRepository),
+            )
+          ],
+          child: JokesApp(),
+        ),
+      );
 
-//     ///Act
-//     await tester.tap(getJokeButton);
-//     await tester.pump();
+      // Validate initial state
+      expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
+      expect(getJokeButton, findsWidgets);
 
-//     ///Validate new joke
-//     expect(find.text('${kTellJokeMessage.i18n}'), findsNothing);
-//     expect(find.text('How do you generate a random string?'), findsWidgets);
-//   });
-// }
+      /// Act
+      await tester.tap(getJokeButton);
+      await tester.pump();
+
+      /// Validate new joke
+      expect(find.text('${kTellJokeMessage.i18n}'), findsNothing);
+      expect(find.text('How do you generate a random string?'), findsWidgets);
+    },
+  );
+}

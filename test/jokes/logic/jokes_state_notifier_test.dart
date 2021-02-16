@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter_jokes/src/features/jokes/logic/jokes_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
@@ -8,7 +7,8 @@ import 'package:dartz/dartz.dart';
 import 'package:errors/errors.dart';
 import 'package:jokes/jokes.dart';
 
-import '../../../lib/src/features/jokes/logic/jokes_provider.dart'
+import 'package:flutter_jokes/src/features/jokes/logic/jokes_state.dart';
+import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart'
     show JokesNotifier;
 
 void main() {
@@ -38,7 +38,7 @@ void main() {
       ),
     );
 
-    final _jokesNotifier = JokesNotifier(_getJoke);
+    final _jokesNotifier = JokesNotifier(getJoke: _getJoke);
 
     final List<String> jokesStates = [];
     _jokesNotifier.addListener((state) {
@@ -46,8 +46,7 @@ void main() {
     });
 
     ///Act
-    ///TODO: Uncomment this line
-    // await _jokesNotifier.getJoke();
+    await _jokesNotifier.getJoke();
 
     ///Expect
     expect(jokesStates, tJokeStates);

@@ -27,8 +27,9 @@ dependencies:
   http: ^0.12.2
   i18n_extension: ^2.0.0
   package_info: ^0.4.3+4
+  meta:
   mockito: ^4.1.4
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
