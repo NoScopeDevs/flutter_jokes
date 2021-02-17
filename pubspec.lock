@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0-nullsafety.1"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -191,7 +198,7 @@ packages:
     source: hosted
     version: "3.0.10"
   equatable:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: equatable
       url: "https://pub.dartlang.org"
@@ -232,13 +239,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_riverpod:
+  flutter_bloc:
     dependency: "direct main"
     description:
-      name: flutter_riverpod
+      name: flutter_bloc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.4"
+    version: "6.1.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -258,6 +265,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.6"
   gettext_parser:
     dependency: transitive
     description:
@@ -377,6 +391,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.4"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   network_manager:
     dependency: "direct main"
     description:
@@ -435,6 +456,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.0"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.3.3"
   pub_semver:
     dependency: transitive
     description:
@@ -456,13 +484,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
-  riverpod:
-    dependency: transitive
-    description:
-      name: riverpod
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.4"
   shelf:
     dependency: transitive
     description:
@@ -510,13 +531,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.1"
-  state_notifier:
-    dependency: transitive
-    description:
-      name: state_notifier
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.0"
   stream_channel:
     dependency: transitive
     description:
@@ -596,4 +610,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.10.0 <2.11.0"
-  flutter: ">=1.17.0"
+  flutter: ">=1.16.0 <2.0.0"

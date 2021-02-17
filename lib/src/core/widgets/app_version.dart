@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../providers/package_info_provider.dart';
-
-class AppVersion extends ConsumerWidget {
+class AppVersion extends StatelessWidget {
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return watch(packageInfoProvider).when(
-      data: (info) => Text('v${info.version}', style: textTheme.caption),
-      loading: () => CircularProgressIndicator(),
-      error: (error, _) => Text(error),
-    );
+    return Text('v${1.0}', style: textTheme.caption);
   }
 }

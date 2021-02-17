@@ -22,13 +22,17 @@ dependencies:
 
   cupertino_icons: ^1.0.0
   dio: ^3.0.10
-  flutter_riverpod: ^0.12.4
   freezed_annotation: ^0.12.0
   http: ^0.12.2
   i18n_extension: ^2.0.0
   package_info: ^0.4.3+4
   meta:
   mockito: ^4.1.4
+
+  #Migration to flutter_bloc
+  get_it: ^5.0.6
+  flutter_bloc: ^6.1.2
+  equatable: ^1.2.6
 
 dev_dependencies:
   flutter_test:
