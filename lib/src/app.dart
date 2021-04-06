@@ -7,6 +7,7 @@ class JokesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Jokes',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
