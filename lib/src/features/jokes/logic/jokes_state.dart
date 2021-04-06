@@ -3,6 +3,10 @@ import 'package:jokes/jokes.dart';
 
 part 'jokes_state.freezed.dart';
 
+extension JokesGetters on JokesState {
+  bool get isLoading => this is _Loading;
+}
+
 @freezed
 abstract class JokesState with _$JokesState {
   /// Data is present state

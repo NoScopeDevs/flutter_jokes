@@ -27,13 +27,7 @@ class JokePage extends StatelessWidget {
           children: [
             const SizedBox(height: 5),
             const JokeConsumer(),
-            CupertinoButton.filled(
-              key: getJokeButtonKey,
-              child: Text(kGiveMeAJoke.i18n),
-              onPressed: () {
-                context.read(jokesNotifierProvider.notifier).getJoke();
-              },
-            ),
+            const _GetJokeButton(),
             AppVersion(),
             const SizedBox(height: 5),
           ],
@@ -75,6 +69,24 @@ class _Message extends StatelessWidget {
         style: theme.textTheme.headline5,
         textAlign: TextAlign.center,
       ),
+    );
+  }
+}
+
+class _GetJokeButton extends ConsumerWidget {
+  const _GetJokeButton();
+  @override
+  Widget build(BuildContext context, ScopedReader watch) {
+    final state = watch(jokesNotifierProvider);
+
+    return CupertinoButton.filled(
+      key: getJokeButtonKey,
+      child: Text(kGiveMeAJoke.i18n),
+      onPressed: !state.isLoading
+          ? () {
+              context.read(jokesNotifierProvider.notifier).getJoke();
+            }
+          : null,
     );
   }
 }
