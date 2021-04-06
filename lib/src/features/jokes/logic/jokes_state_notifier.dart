@@ -4,9 +4,9 @@ part of 'jokes_provider.dart';
 class JokesNotifier extends StateNotifier<JokesState> {
   /// Base constructor expects a [ProviderReference] to
   /// read its usecases and also defines inital state
-  JokesNotifier(GetJoke getJoke)
+  JokesNotifier({required GetJoke getJoke, JokesState? initialState})
       : _getJoke = getJoke,
-        super(JokesState.initial());
+        super(initialState ?? JokesState.initial());
 
   final GetJoke _getJoke;
 

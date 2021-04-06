@@ -7,12 +7,13 @@ import 'package:jokes/jokes.dart';
 import '../../../core/env/environment_config.dart';
 
 import 'jokes_state.dart';
+export 'jokes_state.dart';
 
 part 'jokes_state_notifier.dart';
 
 /// Provider to use the JokesStateNotifier
 final jokesNotifierProvider = StateNotifierProvider<JokesNotifier, JokesState>(
-  (ref) => JokesNotifier(ref.watch(_getJokeProvider)),
+  (ref) => JokesNotifier(getJoke: ref.watch(getJokeProvider)),
 );
 
 /// Repositories Providers
@@ -31,7 +32,7 @@ final repositoryProvider = Provider<IJokesRepository>(
 );
 
 /// Use Cases Providers
-final _getJokeProvider = Provider<GetJoke>(
+final getJokeProvider = Provider<GetJoke>(
   (ref) {
     final repository = ref.watch(repositoryProvider);
     return GetJoke(repository: repository);

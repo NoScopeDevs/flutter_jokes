@@ -8,8 +8,7 @@ class JokeCard extends StatelessWidget {
   const JokeCard({
     Key? key,
     required this.joke,
-  })   : assert(joke != null),
-        super(key: key);
+  }) : super(key: key);
 
   final Joke joke;
 
@@ -37,11 +36,10 @@ class JokeCard extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
-              if (joke.safe != null)
-                Icon(
-                  joke.safe ? Icons.check : Icons.remove,
-                  color: joke.safe ? Colors.green : Colors.red,
-                )
+              Icon(
+                joke.safe ? Icons.check : Icons.remove,
+                color: joke.safe ? Colors.green : Colors.red,
+              )
             ],
           ),
         ),

@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/widgets/app_version.dart';
 import '../logic/jokes_provider.dart';
-import '../logic/jokes_state.dart';
 
 import 'joke_page.i18n.dart';
 import 'widgets.dart';
