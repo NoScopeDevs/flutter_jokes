@@ -1,14 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:errors/errors.dart';
 import 'package:jokes/jokes.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../lib/src/app.dart';
-import '../../../lib/src/features/jokes/logic/jokes_provider.dart';
-import '../../../lib/src/features/jokes/views/joke_page.dart';
-import '../../../lib/src/features/jokes/views/joke_page.i18n.dart';
+import 'package:flutter_jokes/src/app.dart';
+import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart';
+import 'package:flutter_jokes/src/features/jokes/views/joke_page.dart';
+import 'package:flutter_jokes/src/features/jokes/views/joke_page.i18n.dart';
 
 class MockGetJoke extends Mock implements GetJoke {}
 

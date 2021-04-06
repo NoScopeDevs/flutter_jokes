@@ -9,27 +9,28 @@ import '../logic/jokes_provider.dart';
 import 'joke_page.i18n.dart';
 import 'widgets.dart';
 
-///Keys for testing
+const contentSpacing = SizedBox(height: 50);
+
+/// * Keys for testing
 final getJokeButtonKey = UniqueKey();
 final loadingIndicatorKey = UniqueKey();
 
 class JokePage extends StatelessWidget {
-  /// Static method to return the widget as a PageRoute
-  static Route go() => MaterialPageRoute<void>(builder: (_) => JokePage());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(kAppTitle.i18n), elevation: 0),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 5),
+            const Spacer(),
             const JokeConsumer(),
+            contentSpacing,
             const _GetJokeButton(),
+            contentSpacing,
+            const Spacer(),
             AppVersion(),
-            const SizedBox(height: 5),
+            contentSpacing,
           ],
         ),
       ),
@@ -60,13 +61,11 @@ class _Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Text(
         message,
-        style: theme.textTheme.headline5,
+        style: Theme.of(context).textTheme.headline5,
         textAlign: TextAlign.center,
       ),
     );
