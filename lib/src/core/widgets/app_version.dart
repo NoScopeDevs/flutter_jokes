@@ -11,7 +11,7 @@ class AppVersion extends ConsumerWidget {
     return watch(packageInfoProvider).when(
       data: (info) => Text('v${info.version}', style: textTheme.caption),
       loading: () => CircularProgressIndicator(),
-      error: (error, _) => Text(error),
+      error: (error, _) => Text(error.toString()),
     );
   }
 }

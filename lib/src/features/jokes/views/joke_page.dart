@@ -32,7 +32,7 @@ class JokePage extends StatelessWidget {
               key: getJokeButtonKey,
               child: Text(kGiveMeAJoke.i18n),
               onPressed: () {
-                context.read(jokesNotifierProvider).getJoke();
+                context.read(jokesNotifierProvider.notifier).getJoke();
               },
             ),
             AppVersion(),
@@ -45,23 +45,18 @@ class JokePage extends StatelessWidget {
 }
 
 class JokeConsumer extends ConsumerWidget {
-  const JokeConsumer({Key key}) : super(key: key);
+  const JokeConsumer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(jokesNotifierProvider.state);
+    final state = watch(jokesNotifierProvider);
 
-    if (state is Initial) {
-      return _Message(kTellJokeMessage.i18n);
-    } else if (state is Loading) {
-      return LoadingWidget(key: loadingIndicatorKey);
-    } else if (state is JokeAvailable) {
-      return JokeCard(joke: state.joke);
-    } else if (state is Error) {
-      return _Message('Error');
-    } else {
-      return _Message('Error');
-    }
+    return state.when(
+      initial: () => _Message(kTellJokeMessage.i18n),
+      data: (joke) => JokeCard(joke: joke),
+      loading: () => LoadingWidget(key: loadingIndicatorKey),
+      error: (e) => _Message('Error'),
+    );
   }
 }
 

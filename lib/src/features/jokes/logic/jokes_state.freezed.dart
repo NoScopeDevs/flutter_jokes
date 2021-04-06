@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'jokes_state.dart';
 
@@ -9,71 +9,73 @@ part of 'jokes_state.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$JokesStateTearOff {
   const _$JokesStateTearOff();
 
-// ignore: unused_element
-  JokeAvailable call({@required JokeModel joke}) {
-    return JokeAvailable(
+  _Data data({required Joke joke}) {
+    return _Data(
       joke: joke,
     );
   }
 
-// ignore: unused_element
-  Initial initial() {
-    return const Initial();
+  _Initial initial() {
+    return const _Initial();
   }
 
-// ignore: unused_element
-  Loading loading() {
-    return const Loading();
+  _Loading loading() {
+    return const _Loading();
   }
 
-// ignore: unused_element
-  Error error([String message]) {
-    return Error(
+  _Error error([String? message]) {
+    return _Error(
       message,
     );
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $JokesState = _$JokesStateTearOff();
 
 /// @nodoc
 mixin _$JokesState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(String message),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(Joke joke) data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    TResult initial(),
-    TResult loading(),
-    TResult error(String message),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Joke joke)? data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    @required TResult initial(Initial value),
-    @required TResult loading(Loading value),
-    @required TResult error(Error value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Data value) data,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    TResult initial(Initial value),
-    TResult loading(Loading value),
-    TResult error(Error value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Data value)? data,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -93,49 +95,50 @@ class _$JokesStateCopyWithImpl<$Res> implements $JokesStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $JokeAvailableCopyWith<$Res> {
-  factory $JokeAvailableCopyWith(
-          JokeAvailable value, $Res Function(JokeAvailable) then) =
-      _$JokeAvailableCopyWithImpl<$Res>;
-  $Res call({JokeModel joke});
+abstract class _$DataCopyWith<$Res> {
+  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
+      __$DataCopyWithImpl<$Res>;
+  $Res call({Joke joke});
 }
 
 /// @nodoc
-class _$JokeAvailableCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements $JokeAvailableCopyWith<$Res> {
-  _$JokeAvailableCopyWithImpl(
-      JokeAvailable _value, $Res Function(JokeAvailable) _then)
-      : super(_value, (v) => _then(v as JokeAvailable));
+class __$DataCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
+    implements _$DataCopyWith<$Res> {
+  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
+      : super(_value, (v) => _then(v as _Data));
 
   @override
-  JokeAvailable get _value => super._value as JokeAvailable;
+  _Data get _value => super._value as _Data;
 
   @override
   $Res call({
-    Object joke = freezed,
+    Object? joke = freezed,
   }) {
-    return _then(JokeAvailable(
-      joke: joke == freezed ? _value.joke : joke as JokeModel,
+    return _then(_Data(
+      joke: joke == freezed
+          ? _value.joke
+          : joke // ignore: cast_nullable_to_non_nullable
+              as Joke,
     ));
   }
 }
 
 /// @nodoc
-class _$JokeAvailable implements JokeAvailable {
-  const _$JokeAvailable({@required this.joke}) : assert(joke != null);
+class _$_Data implements _Data {
+  const _$_Data({required this.joke});
 
   @override
-  final JokeModel joke;
+  final Joke joke;
 
   @override
   String toString() {
-    return 'JokesState(joke: $joke)';
+    return 'JokesState.data(joke: $joke)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is JokeAvailable &&
+        (other is _Data &&
             (identical(other.joke, joke) ||
                 const DeepCollectionEquality().equals(other.joke, joke)));
   }
@@ -146,99 +149,89 @@ class _$JokeAvailable implements JokeAvailable {
 
   @JsonKey(ignore: true)
   @override
-  $JokeAvailableCopyWith<JokeAvailable> get copyWith =>
-      _$JokeAvailableCopyWithImpl<JokeAvailable>(this, _$identity);
+  _$DataCopyWith<_Data> get copyWith =>
+      __$DataCopyWithImpl<_Data>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Joke joke) data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    return $default(joke);
+    return data(joke);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    TResult initial(),
-    TResult loading(),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Joke joke)? data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
-    if ($default != null) {
-      return $default(joke);
+    if (data != null) {
+      return data(joke);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    @required TResult initial(Initial value),
-    @required TResult loading(Loading value),
-    @required TResult error(Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Data value) data,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
-    return $default(this);
+    return data(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    TResult initial(Initial value),
-    TResult loading(Loading value),
-    TResult error(Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Data value)? data,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
-    if ($default != null) {
-      return $default(this);
+    if (data != null) {
+      return data(this);
     }
     return orElse();
   }
 }
 
-abstract class JokeAvailable implements JokesState {
-  const factory JokeAvailable({@required JokeModel joke}) = _$JokeAvailable;
+abstract class _Data implements JokesState {
+  const factory _Data({required Joke joke}) = _$_Data;
 
-  JokeModel get joke;
+  Joke get joke => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $JokeAvailableCopyWith<JokeAvailable> get copyWith;
+  _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitialCopyWith<$Res> {
-  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
-      _$InitialCopyWithImpl<$Res>;
+abstract class _$InitialCopyWith<$Res> {
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements $InitialCopyWith<$Res> {
-  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
-      : super(_value, (v) => _then(v as Initial));
+class __$InitialCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
-  Initial get _value => super._value as Initial;
+  _Initial get _value => super._value as _Initial;
 }
 
 /// @nodoc
-class _$Initial implements Initial {
-  const _$Initial();
+class _$_Initial implements _Initial {
+  const _$_Initial();
 
   @override
   String toString() {
@@ -247,7 +240,7 @@ class _$Initial implements Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial);
+    return identical(this, other) || (other is _Initial);
   }
 
   @override
@@ -255,29 +248,24 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Joke joke) data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    TResult initial(),
-    TResult loading(),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Joke joke)? data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -286,29 +274,24 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    @required TResult initial(Initial value),
-    @required TResult loading(Loading value),
-    @required TResult error(Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Data value) data,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    TResult initial(Initial value),
-    TResult loading(Loading value),
-    TResult error(Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Data value)? data,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -316,29 +299,29 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements JokesState {
-  const factory Initial() = _$Initial;
+abstract class _Initial implements JokesState {
+  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
-abstract class $LoadingCopyWith<$Res> {
-  factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
-      _$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements $LoadingCopyWith<$Res> {
-  _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
-      : super(_value, (v) => _then(v as Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
 
   @override
-  Loading get _value => super._value as Loading;
+  _Loading get _value => super._value as _Loading;
 }
 
 /// @nodoc
-class _$Loading implements Loading {
-  const _$Loading();
+class _$_Loading implements _Loading {
+  const _$_Loading();
 
   @override
   String toString() {
@@ -347,7 +330,7 @@ class _$Loading implements Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) || (other is _Loading);
   }
 
   @override
@@ -355,29 +338,24 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Joke joke) data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    TResult initial(),
-    TResult loading(),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Joke joke)? data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -386,29 +364,24 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    @required TResult initial(Initial value),
-    @required TResult loading(Loading value),
-    @required TResult error(Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Data value) data,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    TResult initial(Initial value),
-    TResult loading(Loading value),
-    TResult error(Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Data value)? data,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -416,42 +389,45 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements JokesState {
-  const factory Loading() = _$Loading;
+abstract class _Loading implements JokesState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
-abstract class $ErrorCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
-      _$ErrorCopyWithImpl<$Res>;
-  $Res call({String message});
+abstract class _$ErrorCopyWith<$Res> {
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
+  $Res call({String? message});
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
-  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
-      : super(_value, (v) => _then(v as Error));
+class __$ErrorCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
+    implements _$ErrorCopyWith<$Res> {
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
 
   @override
-  Error get _value => super._value as Error;
+  _Error get _value => super._value as _Error;
 
   @override
   $Res call({
-    Object message = freezed,
+    Object? message = freezed,
   }) {
-    return _then(Error(
-      message == freezed ? _value.message : message as String,
+    return _then(_Error(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-class _$Error implements Error {
-  const _$Error([this.message]);
+class _$_Error implements _Error {
+  const _$_Error([this.message]);
 
   @override
-  final String message;
+  final String? message;
 
   @override
   String toString() {
@@ -461,7 +437,7 @@ class _$Error implements Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Error &&
+        (other is _Error &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -472,34 +448,29 @@ class _$Error implements Error {
 
   @JsonKey(ignore: true)
   @override
-  $ErrorCopyWith<Error> get copyWith =>
-      _$ErrorCopyWithImpl<Error>(this, _$identity);
+  _$ErrorCopyWith<_Error> get copyWith =>
+      __$ErrorCopyWithImpl<_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult error(String message),
+  TResult when<TResult extends Object?>({
+    required TResult Function(Joke joke) data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String? message) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return error(message);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(JokeModel joke), {
-    TResult initial(),
-    TResult loading(),
-    TResult error(String message),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Joke joke)? data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String? message)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(message);
     }
@@ -508,29 +479,24 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    @required TResult initial(Initial value),
-    @required TResult loading(Loading value),
-    @required TResult error(Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Data value) data,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
-    assert($default != null);
-    assert(initial != null);
-    assert(loading != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(JokeAvailable value), {
-    TResult initial(Initial value),
-    TResult loading(Loading value),
-    TResult error(Error value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Data value)? data,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -538,10 +504,10 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements JokesState {
-  const factory Error([String message]) = _$Error;
+abstract class _Error implements JokesState {
+  const factory _Error([String? message]) = _$_Error;
 
-  String get message;
+  String? get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ErrorCopyWith<Error> get copyWith;
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }

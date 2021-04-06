@@ -13,7 +13,7 @@ class JokeModel implements Joke {
     this.flags,
     this.id,
     this.lang,
-    this.safe,
+    required this.safe,
     this.setup,
     this.type,
   });
@@ -39,7 +39,7 @@ class JokeModel implements Joke {
   final String? lang;
 
   @override
-  final bool? safe;
+  final bool safe;
 
   @override
   final String? setup;

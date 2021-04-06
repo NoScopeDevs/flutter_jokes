@@ -6,35 +6,30 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.9.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
-  # * Scoped Packages
+  jokes:
+    path: packages/jokes
   network_manager:
     git:
       url: git://github.com/NoScopeDevs/network_manager
+  cupertino_icons: ^1.0.2
+  dio: ^4.0.0
+  flutter_riverpod: ^0.14.0
+  freezed_annotation: ^0.14.1
+  http: ^0.13.1
+  i18n_extension: ^4.0.0
+  mocktail: ^0.1.1
+  package_info: ^2.0.0
 
-  jokes:
-    path: packages/jokes
-
-  cupertino_icons: ^1.0.0
-  dio: ^3.0.10
-  flutter_riverpod: ^0.12.4
-  freezed_annotation: ^0.12.0
-  http: ^0.12.2
-  i18n_extension: ^2.0.0
-  package_info: ^0.4.3+4
-  mockito: ^4.1.4
-  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   build_runner: ^1.11.1
-  freezed: ^0.12.7
+  freezed: ^0.14.1+2
 
 flutter:
   uses-material-design: true

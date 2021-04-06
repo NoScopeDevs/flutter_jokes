@@ -11,7 +11,7 @@ import 'jokes_state.dart';
 part 'jokes_state_notifier.dart';
 
 /// Provider to use the JokesStateNotifier
-final jokesNotifierProvider = StateNotifierProvider(
+final jokesNotifierProvider = StateNotifierProvider<JokesNotifier, JokesState>(
   (ref) => JokesNotifier(ref.watch(_getJokeProvider)),
 );
 

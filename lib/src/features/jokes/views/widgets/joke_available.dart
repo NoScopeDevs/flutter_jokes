@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:jokes/jokes.dart' show JokeModel;
+import 'package:jokes/jokes.dart' show Joke;
 
 import '../joke_page.i18n.dart';
 
 class JokeCard extends StatelessWidget {
   const JokeCard({
-    Key key,
-    @required this.joke,
-  })  : assert(joke != null),
+    Key? key,
+    required this.joke,
+  })   : assert(joke != null),
         super(key: key);
 
-  final JokeModel joke;
+  final Joke joke;
 
   @override
   Widget build(BuildContext context) {

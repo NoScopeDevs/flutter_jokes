@@ -15,7 +15,7 @@ JokeModel _$JokeModelFromJson(Map<String, dynamic> json) {
         : FlagsModel.fromJson(json['flags'] as Map<String, dynamic>),
     id: json['id'] as int?,
     lang: json['lang'] as String?,
-    safe: json['safe'] as bool?,
+    safe: json['safe'] as bool,
     setup: json['setup'] as String?,
     type: json['type'] as String?,
   );

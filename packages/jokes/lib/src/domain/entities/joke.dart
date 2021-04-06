@@ -10,7 +10,7 @@ abstract class Joke extends Equatable {
     this.delivery,
     this.flags,
     this.id,
-    this.safe,
+    required this.safe,
     this.lang,
   });
 
@@ -20,6 +20,6 @@ abstract class Joke extends Equatable {
   final String? delivery;
   final Flags? flags;
   final int? id;
-  final bool? safe;
+  final bool safe;
   final String? lang;
 }
