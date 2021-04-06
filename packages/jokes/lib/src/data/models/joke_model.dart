@@ -8,14 +8,14 @@ part 'joke_model.g.dart';
 @JsonSerializable()
 class JokeModel implements Joke {
   JokeModel({
-    this.category,
-    this.delivery,
-    this.flags,
-    this.id,
-    this.lang,
-    this.safe,
-    this.setup,
-    this.type,
+    required this.category,
+    required this.delivery,
+    required this.flags,
+    required this.id,
+    required this.lang,
+    required this.safe,
+    required this.setup,
+    required this.type,
   });
 
   factory JokeModel.fromJson(Map<String, dynamic> json) =>

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:errors/errors.dart';
-import 'package:meta/meta.dart';
 
 import '../../models/joke_model.dart';
 
@@ -8,11 +7,9 @@ import 'remote_data_source.dart';
 
 class DioDataSource implements IRemoteDataSource {
   DioDataSource({
-    @required String url,
-    @required Dio client,
-  })  : assert(url != null),
-        assert(client != null),
-        _url = url,
+    required String url,
+    required Dio client,
+  })   : _url = url,
         _client = client;
 
   final String _url;

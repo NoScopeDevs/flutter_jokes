@@ -4,14 +4,14 @@ import 'flags.dart';
 
 abstract class Joke extends Equatable {
   Joke({
-    this.category,
-    this.type,
-    this.setup,
-    this.delivery,
-    this.flags,
-    this.id,
-    this.safe,
-    this.lang,
+    required this.category,
+    required this.type,
+    required this.setup,
+    required this.delivery,
+    required this.flags,
+    required this.id,
+    required this.safe,
+    required this.lang,
   });
 
   final String category;

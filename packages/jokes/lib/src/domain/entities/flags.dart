@@ -2,12 +2,12 @@ import 'package:equatable/equatable.dart';
 
 abstract class Flags extends Equatable {
   Flags({
-    this.nsfw,
-    this.religious,
-    this.political,
-    this.racist,
-    this.sexist,
-    this.explicit,
+    required this.nsfw,
+    required this.religious,
+    required this.political,
+    required this.racist,
+    required this.sexist,
+    required this.explicit,
   });
 
   final bool nsfw;

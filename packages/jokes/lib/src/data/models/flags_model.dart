@@ -7,12 +7,12 @@ part 'flags_model.g.dart';
 @JsonSerializable()
 class FlagsModel implements Flags {
   FlagsModel({
-    this.explicit,
-    this.nsfw,
-    this.political,
-    this.racist,
-    this.religious,
-    this.sexist,
+    required this.explicit,
+    required this.nsfw,
+    required this.political,
+    required this.racist,
+    required this.religious,
+    required this.sexist,
   });
 
   factory FlagsModel.fromJson(Map<String, dynamic> json) =>

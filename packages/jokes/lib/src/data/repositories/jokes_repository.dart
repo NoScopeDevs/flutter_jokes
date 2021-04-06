@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:errors/errors.dart';
-import 'package:meta/meta.dart';
 import 'package:network_manager/network_manager.dart';
 
 import '../../domain/domain.dart' show Joke, IJokesRepository;
@@ -11,11 +10,9 @@ import '../datasources/remote/remote_data_source.dart';
 class JokesRepository implements IJokesRepository {
   /// Jokes repository constructor
   JokesRepository({
-    @required INetworkManager networkManager,
-    @required IRemoteDataSource remoteDataSource,
-  })  : assert(networkManager != null),
-        assert(remoteDataSource != null),
-        _networkManager = networkManager,
+    required INetworkManager networkManager,
+    required IRemoteDataSource remoteDataSource,
+  })   : _networkManager = networkManager,
         _remoteDataSource = remoteDataSource;
 
   final INetworkManager _networkManager;
