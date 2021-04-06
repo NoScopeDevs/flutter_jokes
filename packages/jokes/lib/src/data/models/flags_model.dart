@@ -7,12 +7,12 @@ part 'flags_model.g.dart';
 @JsonSerializable()
 class FlagsModel implements Flags {
   FlagsModel({
-    required this.explicit,
-    required this.nsfw,
-    required this.political,
-    required this.racist,
-    required this.religious,
-    required this.sexist,
+    this.explicit,
+    this.nsfw,
+    this.political,
+    this.racist,
+    this.religious,
+    this.sexist,
   });
 
   factory FlagsModel.fromJson(Map<String, dynamic> json) =>
@@ -21,22 +21,22 @@ class FlagsModel implements Flags {
   Map<String, dynamic> toJson() => _$FlagsModelToJson(this);
 
   @override
-  final bool explicit;
+  final bool? explicit;
 
   @override
-  final bool nsfw;
+  final bool? nsfw;
 
   @override
-  final bool political;
+  final bool? political;
 
   @override
-  final bool racist;
+  final bool? racist;
 
   @override
-  final bool religious;
+  final bool? religious;
 
   @override
-  final bool sexist;
+  final bool? sexist;
 
   @override
   List<Object> get props => [];

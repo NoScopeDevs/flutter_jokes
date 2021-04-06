@@ -8,12 +8,12 @@ part of 'flags_model.dart';
 
 FlagsModel _$FlagsModelFromJson(Map<String, dynamic> json) {
   return FlagsModel(
-    explicit: json['explicit'] as bool,
-    nsfw: json['nsfw'] as bool,
-    political: json['political'] as bool,
-    racist: json['racist'] as bool,
-    religious: json['religious'] as bool,
-    sexist: json['sexist'] as bool,
+    explicit: json['explicit'] as bool?,
+    nsfw: json['nsfw'] as bool?,
+    political: json['political'] as bool?,
+    racist: json['racist'] as bool?,
+    religious: json['religious'] as bool?,
+    sexist: json['sexist'] as bool?,
   );
 }
 

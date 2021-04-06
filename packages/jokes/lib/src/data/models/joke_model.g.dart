@@ -8,14 +8,16 @@ part of 'joke_model.dart';
 
 JokeModel _$JokeModelFromJson(Map<String, dynamic> json) {
   return JokeModel(
-    category: json['category'] as String,
-    delivery: json['delivery'] as String,
-    flags: FlagsModel.fromJson(json['flags'] as Map<String, dynamic>),
-    id: json['id'] as int,
-    lang: json['lang'] as String,
-    safe: json['safe'] as bool,
-    setup: json['setup'] as String,
-    type: json['type'] as String,
+    category: json['category'] as String?,
+    delivery: json['delivery'] as String?,
+    flags: json['flags'] == null
+        ? null
+        : FlagsModel.fromJson(json['flags'] as Map<String, dynamic>),
+    id: json['id'] as int?,
+    lang: json['lang'] as String?,
+    safe: json['safe'] as bool?,
+    setup: json['setup'] as String?,
+    type: json['type'] as String?,
   );
 }
 

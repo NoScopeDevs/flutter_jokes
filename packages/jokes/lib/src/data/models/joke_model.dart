@@ -8,14 +8,14 @@ part 'joke_model.g.dart';
 @JsonSerializable()
 class JokeModel implements Joke {
   JokeModel({
-    required this.category,
-    required this.delivery,
-    required this.flags,
-    required this.id,
-    required this.lang,
-    required this.safe,
-    required this.setup,
-    required this.type,
+    this.category,
+    this.delivery,
+    this.flags,
+    this.id,
+    this.lang,
+    this.safe,
+    this.setup,
+    this.type,
   });
 
   factory JokeModel.fromJson(Map<String, dynamic> json) =>
@@ -24,28 +24,28 @@ class JokeModel implements Joke {
   Map<String, dynamic> toJson() => _$JokeModelToJson(this);
 
   @override
-  final String category;
+  final String? category;
 
   @override
-  final String delivery;
+  final String? delivery;
 
   @override
-  final FlagsModel flags;
+  final FlagsModel? flags;
 
   @override
-  final int id;
+  final int? id;
 
   @override
-  final String lang;
+  final String? lang;
 
   @override
-  final bool safe;
+  final bool? safe;
 
   @override
-  final String setup;
+  final String? setup;
 
   @override
-  final String type;
+  final String? type;
 
   @override
   List<Object> get props => [];
