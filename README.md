@@ -1,4 +1,4 @@
-# flutter_bluetooth_scanner by Elian Ortega
+# FlutterJokes by NoScopeDevs
 
 A flutter application that will make you laugh with some developer jokes.
 
@@ -22,8 +22,8 @@ flutter run --dart-define apiUrl=https://v2.jokeapi.dev
 ```
 ## App Preview
 <img src="assets/readme/demo.gif" width=200 height=429/> 
-<img src="assets/readme/demo1.PNG" width=200 height=429/> 
-<img src="assets/readme/demo2.PNG" width=200 height=429/>
+<img src="assets/readme/demo1.png" width=200 height=429/> 
+<img src="assets/readme/demo2.png" width=200 height=429/>
 
 ## Simple Testing
 ### ✅ Unit Test
