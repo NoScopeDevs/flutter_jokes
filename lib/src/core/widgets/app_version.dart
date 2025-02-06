@@ -5,13 +5,13 @@ import '../providers/package_info_provider.dart';
 
 class AppVersion extends ConsumerWidget {
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final textTheme = Theme.of(context).textTheme;
 
-    return watch(packageInfoProvider).when(
-      data: (info) => Text('v${info.version}', style: textTheme.caption),
-      loading: () => CircularProgressIndicator(),
-      error: (error, _) => Text(error.toString()),
-    );
+    return ref.watch(packageInfoProvider).when(
+          data: (info) => Text('v${info.version}', style: textTheme.labelSmall),
+          error: (error, _) => Text(error.toString()),
+          loading: CircularProgressIndicator.new,
+        );
   }
 }

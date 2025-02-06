@@ -1,19 +1,17 @@
+import 'package:jokes/src/data/models/flags_model.dart';
+import 'package:jokes/src/domain/domain.dart' show Joke;
 import 'package:json_annotation/json_annotation.dart';
-
-import '../../domain/domain.dart' show Joke;
-import 'flags_model.dart';
 
 part 'joke_model.g.dart';
 
 @JsonSerializable()
 class JokeModel implements Joke {
   JokeModel({
-    this.category,
+    required this.safe, this.category,
     this.delivery,
     this.flags,
     this.id,
     this.lang,
-    required this.safe,
     this.setup,
     this.type,
   });

@@ -15,11 +15,11 @@ class JokesNotifier extends StateNotifier<JokesState> {
   Future<void> getJoke() async {
     state = JokesState.loading();
 
-    final result = await _getJoke();
-
-    result.fold(
-      (error) => state = JokesState.error(error.toString()),
-      (joke) => state = JokesState.data(joke: joke),
-    );
+    try {
+      final result = await _getJoke();
+      state = JokesState.data(joke: result);
+    } catch (e) {
+      state = JokesState.error(e.toString());
+    }
   }
 }

@@ -1,16 +1,15 @@
 import 'package:equatable/equatable.dart';
 
-import 'flags.dart';
+import 'package:jokes/src/domain/entities/flags.dart';
 
 abstract class Joke extends Equatable {
-  Joke({
-    this.category,
+  const Joke({
+    required this.safe, this.category,
     this.type,
     this.setup,
     this.delivery,
     this.flags,
     this.id,
-    required this.safe,
     this.lang,
   });
 

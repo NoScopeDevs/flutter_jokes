@@ -1,9 +1,9 @@
-import 'package:dartz/dartz.dart';
-import 'package:errors/errors.dart';
+// IDC
+// ignore_for_file: one_member_abstracts
 
-import '../entities/joke.dart';
+import 'package:jokes/src/domain/entities/joke.dart';
 
 /// Repository interface for jokes
 abstract class IJokesRepository {
-  Future<Either<Failure, Joke>> getJoke();
+  Future<Joke> getJoke();
 }

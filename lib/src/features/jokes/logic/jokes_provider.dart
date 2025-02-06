@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:network_manager/network_manager.dart';
 import 'package:jokes/jokes.dart';
 
 import '../../../core/env/environment_config.dart';
@@ -20,7 +18,6 @@ final jokesNotifierProvider = StateNotifierProvider<JokesNotifier, JokesState>(
 // * Repository
 final jokesRepositoryProvider = Provider<IJokesRepository>(
   (_) => JokesRepository(
-    networkManager: NetworkManager(DataConnectionChecker()),
     remoteDataSource: DioDataSource(
       client: Dio(),
       url: '${EnvironmentConfig.apiUrl}/joke/Programming',

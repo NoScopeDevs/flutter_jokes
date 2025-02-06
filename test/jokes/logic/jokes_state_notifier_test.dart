@@ -1,9 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dartz/dartz.dart';
-
-import 'package:errors/errors.dart';
 import 'package:jokes/jokes.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -37,11 +32,7 @@ void main() {
         JokesState.data(joke: joke)
       ];
 
-      when(() => _getJoke()).thenAnswer(
-        (_) => Future.value(
-          Right<Failure, Joke>(joke),
-        ),
-      );
+      when(() => _getJoke()).thenAnswer((_) => Future.value(joke));
 
       final _jokesNotifier = JokesNotifier(getJoke: _getJoke);
 
@@ -63,14 +54,10 @@ void main() {
       final tJokeStates = <JokesState>[
         JokesState.initial(),
         JokesState.loading(),
-        JokesState.error(ServerFailure().toString()),
+        JokesState.error(Exception().toString()),
       ];
 
-      when(() => _getJoke()).thenAnswer(
-        (_) => Future.value(
-          Left<Failure, Joke>(ServerFailure()),
-        ),
-      );
+      when(() => _getJoke()).thenThrow(Exception());
 
       final _jokesNotifier = JokesNotifier(getJoke: _getJoke);
 

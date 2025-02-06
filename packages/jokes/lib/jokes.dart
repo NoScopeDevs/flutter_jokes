@@ -1,5 +1,6 @@
-library jokes;
+/// Jokes library
+library;
 
 export 'src/data/data.dart'
-    show JokeModel, JokesRepository, DioDataSource, HttpDataSource;
-export 'src/domain/domain.dart' show IJokesRepository, GetJoke, Joke;
+    show DioDataSource, HttpDataSource, JokeModel, JokesRepository;
+export 'src/domain/domain.dart' show GetJoke, IJokesRepository, Joke;

@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/widgets/app_version.dart';
 import '../logic/jokes_provider.dart';
 
-import 'joke_page.i18n.dart';
 import 'widgets.dart';
 
 const contentSpacing = SizedBox(height: 50);
@@ -19,16 +18,21 @@ class JokePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(kAppTitle.i18n), elevation: 0),
-      body: Center(
+      appBar: AppBar(
+        title: Text('FlutterJokes'),
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Spacer(),
+            contentSpacing,
             const JokeConsumer(),
             contentSpacing,
-            const _GetJokeButton(),
+            Align(
+              child: const _GetJokeButton(),
+            ),
             contentSpacing,
-            const Spacer(),
             AppVersion(),
             contentSpacing,
           ],
@@ -42,11 +46,10 @@ class JokeConsumer extends ConsumerWidget {
   const JokeConsumer({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(jokesNotifierProvider);
-
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(jokesNotifierProvider);
     return state.when(
-      initial: () => _Message(kTellJokeMessage.i18n),
+      initial: () => _Message('Tell Joke'),
       data: (joke) => JokeCard(joke: joke),
       loading: () => LoadingWidget(key: loadingIndicatorKey),
       error: (e) => _Message('Error'),
@@ -65,7 +68,7 @@ class _Message extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Text(
         message,
-        style: Theme.of(context).textTheme.headline5,
+        style: Theme.of(context).textTheme.displayMedium,
         textAlign: TextAlign.center,
       ),
     );
@@ -75,16 +78,14 @@ class _Message extends StatelessWidget {
 class _GetJokeButton extends ConsumerWidget {
   const _GetJokeButton();
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final state = watch(jokesNotifierProvider);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(jokesNotifierProvider);
 
     return CupertinoButton.filled(
       key: getJokeButtonKey,
-      child: Text(kGiveMeAJoke.i18n),
+      child: Text('Give me a joke'),
       onPressed: !state.isLoading
-          ? () {
-              context.read(jokesNotifierProvider.notifier).getJoke();
-            }
+          ? ref.read(jokesNotifierProvider.notifier).getJoke
           : null,
     );
   }

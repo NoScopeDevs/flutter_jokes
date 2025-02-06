@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 abstract class Flags extends Equatable {
-  Flags({
+  const Flags({
     this.nsfw,
     this.religious,
     this.political,
