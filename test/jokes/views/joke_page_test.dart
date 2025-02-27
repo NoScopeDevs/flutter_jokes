@@ -1,15 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:errors/errors.dart';
 import 'package:jokes/jokes.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'package:flutter_jokes/src/app.dart';
 import 'package:flutter_jokes/src/features/jokes/logic/jokes_provider.dart';
 import 'package:flutter_jokes/src/features/jokes/views/joke_page.dart';
-import 'package:flutter_jokes/src/features/jokes/views/joke_page.i18n.dart';
 
 class MockGetJoke extends Mock implements GetJoke {}
 
@@ -22,7 +18,7 @@ void main() {
       // Setup
       await tester.pumpWidget(ProviderScope(child: JokesApp()));
       //Expect
-      expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
+      expect(find.text('Tell Joke'), findsWidgets);
     });
 
     testWidgets('Loading Indicator when LoadingState', (tester) async {
@@ -30,13 +26,12 @@ void main() {
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            jokesNotifierProvider.overrideWithProvider(
-                StateNotifierProvider<JokesNotifier, JokesState>(
-              (_) => JokesNotifier(
+            jokesNotifierProvider.overrideWith(
+              (ref) => JokesNotifier(
                 getJoke: MockGetJoke(),
                 initialState: JokesState.loading(),
               ),
-            ))
+            ),
           ],
           child: JokesApp(),
         ),
@@ -60,25 +55,21 @@ void main() {
         lang: 'en',
       );
 
-      when(() => _getJoke()).thenAnswer(
-        (_) => Future.value(
-          Right<Failure, Joke>(joke),
-        ),
-      );
+      when(() => _getJoke()).thenAnswer((_) => Future.value(joke));
 
       await tester.pumpWidget(
         ProviderScope(
           overrides: [
-            getJokeProvider.overrideWithProvider(
-              Provider((ref) => _getJoke),
-            )
+            getJokeProvider.overrideWith(
+              (ref) => _getJoke,
+            ),
           ],
           child: JokesApp(),
         ),
       );
 
       //Validate initial state
-      expect(find.text('${kTellJokeMessage.i18n}'), findsWidgets);
+      expect(find.text('Tell Joke'), findsWidgets);
       expect(getJokeButton, findsWidgets);
 
       ///Act
@@ -86,7 +77,7 @@ void main() {
       await tester.pump();
 
       ///Validate new joke
-      expect(find.text('${kTellJokeMessage.i18n}'), findsNothing);
+      expect(find.text('Tell Joke'), findsNothing);
       expect(find.text('How do you generate a random string?'), findsWidgets);
     });
   });

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:jokes/jokes.dart' show Joke;
 
-import '../joke_page.i18n.dart';
-
 class JokeCard extends StatelessWidget {
   const JokeCard({
     Key? key,
@@ -15,6 +13,7 @@ class JokeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -25,14 +24,14 @@ class JokeCard extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                joke.setup ?? kThinkingMessage.i18n,
-                style: theme.textTheme.headline6,
+                joke.setup ?? 'I\'m thinking...',
+                style: textTheme.displaySmall,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),
               Text(
                 joke.delivery ?? '',
-                style: theme.textTheme.headline5,
+                style: textTheme.displayMedium,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 30),

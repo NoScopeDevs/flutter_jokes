@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'jokes_state.dart';
 
@@ -10,35 +12,7 @@ part of 'jokes_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JokesStateTearOff {
-  const _$JokesStateTearOff();
-
-  _Data data({required Joke joke}) {
-    return _Data(
-      joke: joke,
-    );
-  }
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Error error([String? message]) {
-    return _Error(
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $JokesState = _$JokesStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$JokesState {
@@ -48,6 +22,14 @@ mixin _$JokesState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String? message) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Joke joke)? data,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String? message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +50,14 @@ mixin _$JokesState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Initial value)? initial,
@@ -82,40 +72,48 @@ mixin _$JokesState {
 abstract class $JokesStateCopyWith<$Res> {
   factory $JokesStateCopyWith(
           JokesState value, $Res Function(JokesState) then) =
-      _$JokesStateCopyWithImpl<$Res>;
+      _$JokesStateCopyWithImpl<$Res, JokesState>;
 }
 
 /// @nodoc
-class _$JokesStateCopyWithImpl<$Res> implements $JokesStateCopyWith<$Res> {
+class _$JokesStateCopyWithImpl<$Res, $Val extends JokesState>
+    implements $JokesStateCopyWith<$Res> {
   _$JokesStateCopyWithImpl(this._value, this._then);
 
-  final JokesState _value;
   // ignore: unused_field
-  final $Res Function(JokesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$DataCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
-      __$DataCopyWithImpl<$Res>;
+abstract class _$$DataImplCopyWith<$Res> {
+  factory _$$DataImplCopyWith(
+          _$DataImpl value, $Res Function(_$DataImpl) then) =
+      __$$DataImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({Joke joke});
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
-      : super(_value, (v) => _then(v as _Data));
+class __$$DataImplCopyWithImpl<$Res>
+    extends _$JokesStateCopyWithImpl<$Res, _$DataImpl>
+    implements _$$DataImplCopyWith<$Res> {
+  __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Data get _value => super._value as _Data;
-
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? joke = freezed,
+    Object? joke = null,
   }) {
-    return _then(_Data(
-      joke: joke == freezed
+    return _then(_$DataImpl(
+      joke: null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
               as Joke,
@@ -124,8 +122,9 @@ class __$DataCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_Data implements _Data {
-  const _$_Data({required this.joke});
+
+class _$DataImpl implements _Data {
+  const _$DataImpl({required this.joke});
 
   @override
   final Joke joke;
@@ -136,21 +135,23 @@ class _$_Data implements _Data {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is _Data &&
-            (identical(other.joke, joke) ||
-                const DeepCollectionEquality().equals(other.joke, joke)));
+        (other.runtimeType == runtimeType &&
+            other is _$DataImpl &&
+            (identical(other.joke, joke) || other.joke == joke));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(joke);
+  int get hashCode => Object.hash(runtimeType, joke);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$DataCopyWith<_Data> get copyWith =>
-      __$DataCopyWithImpl<_Data>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
+      __$$DataImplCopyWithImpl<_$DataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -161,6 +162,17 @@ class _$_Data implements _Data {
     required TResult Function(String? message) error,
   }) {
     return data(joke);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Joke joke)? data,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String? message)? error,
+  }) {
+    return data?.call(joke);
   }
 
   @override
@@ -191,6 +203,17 @@ class _$_Data implements _Data {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Initial value)? initial,
@@ -206,32 +229,40 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements JokesState {
-  const factory _Data({required Joke joke}) = _$_Data;
+  const factory _Data({required final Joke joke}) = _$DataImpl;
 
-  Joke get joke => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
+  Joke get joke;
+
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$JokesStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Initial get _value => super._value as _Initial;
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
+
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -239,8 +270,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -255,6 +287,17 @@ class _$_Initial implements _Initial {
     required TResult Function(String? message) error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Joke joke)? data,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String? message)? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -285,6 +328,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Initial value)? initial,
@@ -300,28 +354,32 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements JokesState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$JokesStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Loading get _value => super._value as _Loading;
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-class _$_Loading implements _Loading {
-  const _$_Loading();
+
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -329,8 +387,9 @@ class _$_Loading implements _Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -345,6 +404,17 @@ class _$_Loading implements _Loading {
     required TResult Function(String? message) error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Joke joke)? data,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String? message)? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -375,6 +445,17 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Initial value)? initial,
@@ -390,31 +471,35 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements JokesState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$JokesStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _Error get _value => super._value as _Error;
-
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_Error(
-      message == freezed
+    return _then(_$ErrorImpl(
+      freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -423,8 +508,9 @@ class __$ErrorCopyWithImpl<$Res> extends _$JokesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_Error implements _Error {
-  const _$_Error([this.message]);
+
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl([this.message]);
 
   @override
   final String? message;
@@ -435,21 +521,23 @@ class _$_Error implements _Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is _Error &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -460,6 +548,17 @@ class _$_Error implements _Error {
     required TResult Function(String? message) error,
   }) {
     return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Joke joke)? data,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String? message)? error,
+  }) {
+    return error?.call(message);
   }
 
   @override
@@ -490,6 +589,17 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Error value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Data value)? data,
     TResult Function(_Initial value)? initial,
@@ -505,9 +615,13 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements JokesState {
-  const factory _Error([String? message]) = _$_Error;
+  const factory _Error([final String? message]) = _$ErrorImpl;
 
-  String? get message => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  String? get message;
+
+  /// Create a copy of JokesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

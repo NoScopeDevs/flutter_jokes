@@ -1,6 +1,5 @@
+import 'package:jokes/src/domain/domain.dart' show Flags;
 import 'package:json_annotation/json_annotation.dart';
-
-import '../../domain/domain.dart' show Flags;
 
 part 'flags_model.g.dart';
 

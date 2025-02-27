@@ -1,16 +1,14 @@
 import 'dart:convert';
 
-import 'package:errors/errors.dart';
 import 'package:http/http.dart';
-import '../../models/joke_model.dart';
-
-import 'remote_data_source.dart';
+import 'package:jokes/src/data/datasources/remote/remote_data_source.dart';
+import 'package:jokes/src/data/models/joke_model.dart';
 
 class HttpDataSource implements IRemoteDataSource {
   HttpDataSource({
     required String url,
     required Client client,
-  })   : _url = url,
+  })  : _url = url,
         _client = client;
 
   final String _url;
@@ -18,17 +16,15 @@ class HttpDataSource implements IRemoteDataSource {
 
   @override
   Future<JokeModel> getJoke() async {
-    try {
-      final result = await _client.get(Uri(scheme: _url));
+    final result = await _client.get(
+      Uri(scheme: _url),
+    );
 
-      if (result.statusCode == 200) {
-        final decode = json.decode(result.body);
-        return JokeModel.fromJson(decode);
-      } else {
-        throw ServerException();
-      }
-    } catch (e) {
-      throw ServerException();
+    if (result.statusCode == 200) {
+      final decode = json.decode(result.body) as Map<String, dynamic>;
+      return JokeModel.fromJson(decode);
+    } else {
+      throw Exception();
     }
   }
 }
